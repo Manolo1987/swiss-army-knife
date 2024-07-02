@@ -1,0 +1,18 @@
+{
+  "name": "regex",
+  "version": "1.0.0",
+  "main": "findfalsydata.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "pdfkit": "^0.15.0",
+    "rls": "^0.3.2"
+  },
+  "description": ""
+}
