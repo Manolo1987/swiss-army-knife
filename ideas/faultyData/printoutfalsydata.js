@@ -1,42 +1,43 @@
+import fs from 'fs';
 
 let employees = [
-    {
-      "username": "Madeline95",
-      "name": "Therese",
-      "surname": "Donnelly",
-      "address": "13591 Cale Plaza",
-      "birthday": "1982-04-29",
-      "taxId": "456207414",
-      "taxClass": "1",
-      "pay": "114556",
-      "paidVacation": "25"
-    },
-    {
-      "username": "Ramiro.Kshlerin81",
-      "name": "Kevin",
-      "surname": "8197",
-      "address": "98861 Kaci Inlet",
-      "birthday": "1960-11-05",
-      "taxId": "605998843",
-      "taxClass": "3",
-      "pay": "69190",
-      "paidVacation": "28"
-    },
-    {
-      "username": "Emmalee_DuBuque36",
-      "name": "Evalyn",
-      "surname": "7708",
-      "address": "7071 Harber Estate",
-      "birthday": "1965-04-24",
-      "taxId": "918195124",
-      "taxClass": "5",
-      "pay": "109340",
-      "paidVacation": "24"
-    },
-    {
-      "username": "Pauline.Herzog77",
-      "name": "Jamarcus",
-      "surname": "Hettinger",
+  {
+    "username": "Madeline95",
+    "name": "Therese",
+    "surname": "Donnelly",
+    "address": "13591 Cale Plaza",
+    "birthday": "1982-04-29",
+    "taxId": "456207414",
+    "taxClass": "1",
+    "pay": "114556",
+    "paidVacation": "25"
+  },
+  {
+    "username": "Ramiro.Kshlerin81",
+    "name": "Kevin",
+    "surname": "8197",
+    "address": "98861 Kaci Inlet",
+    "birthday": "1960-11-05",
+    "taxId": "605998843",
+    "taxClass": "3",
+    "pay": "69190",
+    "paidVacation": "28"
+  },
+  {
+    "username": "Emmalee_DuBuque36",
+    "name": "Evalyn",
+    "surname": "7708",
+    "address": "7071 Harber Estate",
+    "birthday": "1965-04-24",
+    "taxId": "918195124",
+    "taxClass": "5",
+    "pay": "109340",
+    "paidVacation": "24"
+  },
+  {
+    "username": "Pauline.Herzog77",
+    "name": "Jamarcus",
+    "surname": "Hettinger",
       "address": "198 Johnson Street",
       "birthday": "1968-12-07",
       "taxId": "",
@@ -11002,8 +11003,8 @@ let employees = [
     }
   ];
 
-  
-  //   {
+    // Keys & values
+    // {
     //     "username": "Madeline95",
     //     "name": "Therese",
     //     "surname": "Donnelly", zahlen statt string eingefügt
@@ -11015,91 +11016,34 @@ let employees = [
     //     "paidVacation": "25"
     //   }
     
-//     let missingTaxId = [];
+    let missingTaxId = [];
 
-//     function findEmptyTaxIds(employees) {
-//       for (let employee of employees) {
-//         if (employee.taxId === "") {
-//           missingTaxId.push({
-//             username: employee.username,
-//             name: employee.name,
-//             surname: employee.surname,
-//             taxId: employee.taxId,
-//           });
-//         }
-//       }
-//       return missingTaxId;
-//     }
-    
-//     let result = findEmptyTaxIds(employees);
-//     console.log(result);
-
-//     console.log(`
-//         ______________________
-        
-
-//         okay lets go number 2
-        
-//         ______________________`);
-
-//     let faultySurnames = [];
-
-// function findFaultySurnames(employees) {
-//   for (let employee of employees) {
-//     if (employee.surname.match(/\d/g)) {
-//       faultySurnames.push({
-//         username: employee.username,
-//         name: employee.name,
-//         surname: employee.surname,
-//       });
-//     }
-//   }
-//   return faultySurnames;
-// }
-//     let result2 = findFaultySurnames(employees);
-//     console.log(result2);
-//     console.log(`
-//         ______________________
-        
-
-//         okay lets go number 3
-        
-//         ______________________`);
-
-//     let payIsString = [];
-
-// function findPayIsString(employees) {
-//   for (let employee of employees) {
-//     if (isNaN(parseFloat(employee.pay))) {
-//       payIsString.push({
-//         username: employee.username,
-//         name: employee.name,
-//         surname: employee.surname,
-//         pay: employee.pay,
-//       });
-//     }
-//   }
-//   return payIsString;
-// }
-//     let result3 = findPayIsString(employees);
-//     console.log(result3);
-
-//     console.log('-------------------');
-
-    const jsPDF = require('jspdf'); // Import jsPDF library
-
-function findEmptyTaxIds(employees) {
-  for (let employee of employees) {
-    if (employee.taxId === "") {
-      missingTaxId.push({
-        username: employee.username,
-        name: employee.name,
-        surname: employee.surname,
-        taxId: employee.taxId,
-      });
+    function findEmptyTaxIds(employees) {
+      for (let employee of employees) {
+        if (employee.taxId === "") {
+          missingTaxId.push({
+            username: employee.username,
+            name: employee.name,
+            surname: employee.surname,
+            taxId: employee.taxId,
+          });
+        }
+      }
+      return missingTaxId;
     }
-  }
-}
+    
+    let result = findEmptyTaxIds(employees);
+    console.log(result);
+
+    console.log(`
+        ______________________
+        
+
+        okay lets go number 2
+        
+        ______________________`);
+
+    let faultySurnames = [];
 
 function findFaultySurnames(employees) {
   for (let employee of employees) {
@@ -11111,7 +11055,19 @@ function findFaultySurnames(employees) {
       });
     }
   }
+  return faultySurnames;
 }
+    let result2 = findFaultySurnames(employees);
+    console.log(result2);
+    console.log(`
+        ______________________
+        
+
+        okay lets go number 3
+        
+        ______________________`);
+
+    let payIsString = [];
 
 function findPayIsString(employees) {
   for (let employee of employees) {
@@ -11124,70 +11080,27 @@ function findPayIsString(employees) {
       });
     }
   }
+  return payIsString;
 }
+    let result3 = findPayIsString(employees);
+    console.log(result3);
 
-function generateEmployeeReport(missingTaxId, faultySurnames, payIsString) {
-  const doc = new jsPDF(); // Create a new PDF document
+    console.log('-------------------');
 
-  // Set document properties (optional)
-  doc.setProperties({
-    title: 'Employee Report',
-    author: 'Your Name',
-  });
+    // Combine arrays into one string
+const data = {
+  result: `Tax ID's missing ${result}`,
+  result2: result2,
+  result3: result3
+};
 
-  // Function to create a section header
-  function createSectionHeader(title) {
-    doc.text(title, 10, 10); // Add section title
-    doc.line(10, 15, doc.internal.pageSize.getWidth() - 10, 15); // Add a line below title
-    doc.moveDown(10); // Add some space after header
+const jsonString = JSON.stringify(data, null, 2);
+
+// Write to file asynchronously
+fs.writeFile('data.json', jsonString, 'utf8', (err) => {
+  if (err) {
+    console.error('Error writing file:', err);
+  } else {
+    console.log('Data has been written to data.json');
   }
-
-  // Create sections for each result
-  createSectionHeader('Missing Tax IDs');
-  printEmployeeList(missingTaxId, doc); // Call helper function to print list
-
-  createSectionHeader('Faulty Surnames');
-  printEmployeeList(faultySurnames, doc);
-
-  createSectionHeader('Pay as String');
-  printEmployeeList(payIsString, doc);
-
-  // Save the PDF document
-  doc.save('employee_report.pdf');
-  console.log('PDF generated successfully!');
-}
-
-function printEmployeeList(employeeList, doc) {
-  // Define table header row
-  const headerRow = ['Username', 'Name', 'Surname'];
-
-  // Extract data for each employee
-  const tableData = employeeList.map((employee) => [
-    employee.username,
-    employee.name,
-    employee.surname,
-  ]);
-
-  // Options for creating the table
-  const tableOptions = {
-    startY: doc.autoTableEndY() + 10, // Start table below previous section
-    head: [headerRow],
-    body: tableData,
-    theme: 'grid', // Choose a table theme (grid, plain, stripes, etc.)
-    styles: {
-      fontSize: 10, // Set font size for table cells
-      cellPadding: 5, // Add padding around cells
-    },
-  };
-
-  // Create the table
-  doc.autoTable(tableOptions);
-}
-
-// Find results
-findEmptyTaxIds(employees);
-findFaultySurnames(employees);
-findPayIsString(employees);
-
-// Generate the PDF report
-generateEmployeeReport(missingTaxId, faultySurnames, payIsString);
+});
